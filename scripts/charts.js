@@ -68,17 +68,17 @@ new Chart(barChart, {
     datasets: [{
       label: 'Dogs',
       data: [2, 4, 1.5, 5.5, 7, 6, 3, 2.5, 4, 5, 7.5, 6],
-      backgroundColor: 'rgba(120, 40, 40, 0.9)',
+      backgroundColor: '#7DACDF',
     },
     {
       label: 'Cats',
       data: [4, 3, 2, 5, 2.5, 3, 6, 4, 2, 1, 5, 6],
-      backgroundColor: 'rgba(40, 120, 200, 0.9)',
+      backgroundColor: '#3A628F',
     },
     {
       label: 'Birds',
       data: [3, 2, 5, 2.5, 4, 4.5, 6, 5, 5.5, 5, 2, 3],
-      backgroundColor: 'rgba(90, 170, 200, 0.9)',
+      backgroundColor: '#276FBF',
     }
   ],
   },
@@ -103,7 +103,7 @@ new Chart(barChart, {
     },
     plugins: {
       htmlLegend: {
-        containerID: 'chart__legend',
+        containerID: 'bar-chart__legend',
       },
       legend: {
         display: false,
@@ -112,3 +112,38 @@ new Chart(barChart, {
   },
   plugins: [htmlLegendPlugin]
 })
+
+const doughnutChart = document.getElementById('doughnut-chart');
+
+new Chart(doughnutChart, {
+  type: 'doughnut',
+  data: {
+    labels: [
+      'BASE PLAN',
+      'ADVANCED PLAN',
+      'PRO PLAN',
+      'ENTERPRISE PLAN'
+    ],
+    datasets: [{
+      label: 'Sales',
+      data: [209, 34, 52, 93],
+      backgroundColor: [
+        '#7DACDF',
+        '#3A628F',
+        '#276FBF',
+        '#0D417C'
+      ]
+    }],
+  },
+  options: {
+    plugins: {
+      htmlLegend: {
+        containerID: 'doughnut-chart__legend'
+      },
+      legend: {
+        display: false,
+      }
+    }
+  },
+  plugins: [htmlLegendPlugin]
+});

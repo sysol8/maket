@@ -5,7 +5,7 @@
   padding: 0 20px 20px;
   color: white;
   font-size: 1rem;
-  background-color: var(--background-accent-red);
+  background-color: var(--background-accent_1);
 }
 
 .logo {
@@ -13,7 +13,7 @@
 }
 
 .title {
-  margin: -10px 0 20px;
+  margin: -10px 0 1rem;
   font-weight: 700;
   font-size: 2rem;
   text-align: center;
@@ -24,13 +24,20 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 0.6rem;
+  gap: 0.4rem;
 }
 
 .navigation-link {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
+  padding: 0.4rem;
+}
+
+.navigation-link:hover {
+  border-radius: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* .bi {
@@ -41,7 +48,7 @@
 .login-logout {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   margin-top: auto;
   border: none;
   background: none;
@@ -53,8 +60,8 @@
   align-items: center;
   width: 100%;
   padding: 20px 30px;
-  color: #222823;
-  background-color: white;
+  color: var(--text);
+  background-color: #7dacdf;
 }
 
 .page__title {
@@ -66,11 +73,11 @@
   border: none;
   border-radius: 1.2rem;
   padding: 0.6rem 1rem;
-  background-color: var(--background-dark);
+  background-color: var(--text-light);
 }
 
 .search-bar__label:has(:focus-visible):not(:has(.search-button:focus-visible)) {
-  outline: 1px solid var(--text-dark);
+  outline: 1px solid var(--text);
 }
 
 .search-bar {
@@ -82,7 +89,7 @@
 }
 
 .search-bar::placeholder {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-size: 1rem;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -98,15 +105,15 @@
   position: absolute;
   right: 1rem;
   bottom: 30%; /* переделать костыль */
+  display: flex;
   width: 20px;
   height: 20px;
   border: 1px solid transparent;
   background-color: transparent;
-  display: flex;
 }
 
 .search-button:focus-visible .search-icon {
-  outline: 1px solid var(--text-dark);
+  outline: 1px solid var(--text);
   outline-offset: 2px;
 }
 
@@ -128,32 +135,37 @@
   gap: 20px;
   height: 100%;
   padding: 20px;
-  background-color: var(--background-dark);
+  background-color: var(--text-light);
 }
 
 .widget {
+  display: flex;
+  flex-direction: column;
   grid-column: auto;
   grid-row: auto;
   border-radius: 12px;
   padding: 10px 16px;
+  color: var(--text);
   background-color: white;
 }
 
 .widget-light {
-  color: var(--text-dark);
-  background-color: var(--background-light);
+  color: var(--text);
 }
 
 .widget-accent-light {
-  background-color: var(--background-accent-red);
+  color: var(--text);
+  background-color: var(--background);
 }
 
 .widget-dark {
-  background-color: var(--background-accent-blue);
+  color: white;
+  background-color: var(--background-accent_1);
 }
 
 .widget-accent-dark {
-  background-color: var(--text-light);
+  color: white;
+  background-color: var(--background-accent_2);
 }
 
 .widget-small__title {
@@ -178,7 +190,9 @@
 
 .widget__info-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  row-gap: 0.4rem;
   padding: 0.8rem;
 }
 
@@ -189,6 +203,9 @@
 .chart__legend {
   display: flex;
   gap: 0.8rem;
+}
+
+.chart {
 }
 
 .legend__list-item {
@@ -216,18 +233,57 @@
   background-color: var(--background-light);
 }
 
+.chart__data-period:focus {
+  outline: transparent;
+}
+
 .chart__data-period:focus-visible {
-  outline: 1px solid var(--text-dark);
+  outline: 1px solid var(--text);
+  outline-offset: 1px;
 }
 
-/* .justify-left {
-    justify-self: start;
+.transactions {
+  display: flex;
+  flex-direction: column;
 }
 
-.justify-center {
-    justify-self: center;
+.transactions__title {
+  margin-bottom: 0.6rem;
 }
 
-.justify-right {
-    justify-self: end;
-} */
+.transactions__list {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 0.4rem;
+}
+
+.transactions__list-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(113, 127, 154, 0.5);
+  padding-bottom: 0.4rem;
+}
+
+.customer-name {
+  flex-grow: 1;
+  text-wrap: nowrap;
+}
+
+.subscription-plan {
+  margin-right: 0.4rem;
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+}
+
+.subscription-plan_base {
+  background-color: var(--background);
+}
+
+.subscription-plan_advanced {
+  background-color: var(--background-accent_1);
+}
+
+.subscription-plan_pro {
+  background-color: var(--background-accent_2);
+}

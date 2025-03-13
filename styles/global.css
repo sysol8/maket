@@ -1,13 +1,19 @@
 :root {
-  --background-accent-red: #782828;
+  /* --background-accent-red: #782828;
   --background-accent-blue: #276fbf;
   --background-light: #f5f5f5;
   --background-dark: #d8dbe2;
-  --color-champagne-pink: #edd3c4;
   --text-light: #222823;
   --text-dark: #131200;
   --accent-color: #58a4b0;
-  --content-color: #a9bcd0;
+  --content-color: #a9bcd0; */
+
+  --background: #7dacdf;
+  --background-dark: #717f9a;
+  --background-accent_1: #3a628f;
+  --background-accent_2: #276fbf; 
+  --text: #0f0f0f;
+  --text-light: #f0f0f0; 
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -46,6 +52,7 @@ a {
   cursor: pointer;
   font: inherit;
   color: inherit;
+  text-decoration: none;
 }
 
 img {
