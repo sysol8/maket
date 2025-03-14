@@ -61,6 +61,17 @@ const htmlLegendPlugin = {
   }
 };
 
+const hoverColorPlugin = {
+  id: 'hoverColorPlugin',
+  beforeInit: (chart) => {
+    chart.data.datasets.forEach(dataset => {
+      if (dataset.backgroundColor) {
+        dataset.hoverBackgroundColor = dataset.backgroundColor;
+      }
+    });
+  }
+};
+
 new Chart(barChart, {
   type: 'bar',
   data: {
@@ -68,17 +79,17 @@ new Chart(barChart, {
     datasets: [{
       label: 'Dogs',
       data: [2, 4, 1.5, 5.5, 7, 6, 3, 2.5, 4, 5, 7.5, 6],
-      backgroundColor: '#7DACDF',
+      backgroundColor: '#7dacdf',
     },
     {
       label: 'Cats',
       data: [4, 3, 2, 5, 2.5, 3, 6, 4, 2, 1, 5, 6],
-      backgroundColor: '#3A628F',
+      backgroundColor: '#ffaa0080',
     },
     {
       label: 'Birds',
       data: [3, 2, 5, 2.5, 4, 4.5, 6, 5, 5.5, 5, 2, 3],
-      backgroundColor: '#276FBF',
+      backgroundColor: '#ff7373',
     }
   ],
   },
@@ -110,7 +121,7 @@ new Chart(barChart, {
       }
     }
   },
-  plugins: [htmlLegendPlugin]
+  plugins: [htmlLegendPlugin, hoverColorPlugin]
 })
 
 const doughnutChart = document.getElementById('doughnut-chart');

@@ -8,10 +8,16 @@
   --accent-color: #58a4b0;
   --content-color: #a9bcd0; */
 
-  --background: #7dacdf;
-  --background-dark: #717f9a;
-  --background-accent_1: #3a628f;
-  --background-accent_2: #276fbf; 
+  --background: #4186d3;
+  --background-accent-blue_1: #0d56a6;
+  --background-accent-blue_2: #274f7d;
+  --background-accent-blue_3: #04356c;
+  --background-accent-blue_4: #689ad3;
+
+  --background-grey: #dfdfdf;
+  --background-light-grey: ;
+  --background-accent-yellow: #fa0;
+  --background-accent-pink: #ff7373; 
   --text: #0f0f0f;
   --text-light: #f0f0f0; 
 }
@@ -37,7 +43,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 body {
   font-family: Poppins, Roboto, Arial, Helvetica, sans-serif;
-  color: white;
+  color: var(--text);
   display: flex;
   height: 100vh;
   

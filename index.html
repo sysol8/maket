@@ -105,19 +105,19 @@
         </form>
       </header>
       <main class="widgets">
-        <article class="widget widget-small widget-light">
+        <article class="widget widget-small">
           <h3 class="widget-small__title">Current MRR</h3>
           <p class="widget__text-large">$12.4k</p>
         </article>
-        <article class="widget widget-small widget-accent-light">
+        <article class="widget widget-small accent-blue_2">
           <h3 class="widget-small__title">Current Customers</h3>
-          <p class="widget__text-large">16,601</p>
+          <p class="widget__text-large">16.601</p>
         </article>
-        <article class="widget widget-small widget-dark">
+        <article class="widget widget-small accent-blue_3">
           <h3 class="widget-small__title">Active Customers</h3>
           <p class="widget__text-large">33%</p>
         </article>
-        <article class="widget widget-small widget-accent-dark">
+        <article class="widget widget-small accent-blue_4">
           <h3 class="widget-small__title">Churn Rate</h3>
           <p class="widget__text-large">2%</p>
         </article>
@@ -176,7 +176,9 @@
             </li>
             <li class="transactions__list-item">
               <p class="customer-name">V. Bumaga</p>
-              <span class="subscription-plan subscription-plan_advanced">Advanced</span>
+              <span class="subscription-plan subscription-plan_advanced"
+                >Advanced</span
+              >
               <span class="transaction__income">+$49.99</span>
             </li>
             <li class="transactions__list-item">
@@ -194,7 +196,45 @@
             View All Transactions
           </button>
         </article>
-        <article class="widget widget-large tickets"></article>
+        <article class="widget widget-large tickets">
+          <h3 class="widget__title">Tickets</h3>
+          <select
+            name="chart__data-period"
+            class="chart__data-period justify-right"
+          >
+            <option class="data-period__item" selected>This year</option>
+            <option class="data-period__item">Previous year</option>
+            <option class="data-period__item">All time</option>
+          </select>
+          <ul class="tabs">
+            <button class="tab__button tab__button-active">All</button>
+            <button class="tab__button">Open</button>
+            <button class="tab__button">Pending</button>
+            <button class="tab__button">Closed</button>
+          </ul>
+          <ul class="tickets__list">
+            <li class="ticket">
+              <p class="customer-email">pipka.popka@sex.ru</p>
+              <p class="ticket__subject">Trouble With Mr. Benis</p>
+              <span class="ticket__status">Open</span>
+            </li>
+            <li class="ticket">
+              <p class="customer-email"></p>
+              <p class="ticket__subject"></p>
+              <span class="ticket__status"></span>
+            </li>
+            <li class="ticket">
+              <p class="customer-email"></p>
+              <p class="ticket__subject"></p>
+              <span class="ticket__status"></span>
+            </li>
+            <li class="ticket">
+              <p class="customer-email"></p>
+              <p class="ticket__subject"></p>
+              <span class="ticket__status"></span>
+            </li>
+          </ul>
+        </article>
         <article class="widget widget-large map"></article>
       </main>
     </div>
