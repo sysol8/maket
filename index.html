@@ -18,6 +18,7 @@
     <aside class="sidebar">
       <img class="logo" src="./assets/icons/logo.svg" />
       <h1 class="title">Bebra</h1>
+      <div class="divider"></div>
       <nav>
         <ul class="navigation__list">
           <li class="navigation__list-item">
@@ -74,6 +75,7 @@
           </li>
         </ul>
       </nav>
+      <div class="divider"></div>
       <button class="login-logout" type="button">
         <svg class="bi" width="16" height="16" fill="currentColor">
           <use href="./assets/icons/bootstrap-icons.svg#box-arrow-left"></use>
@@ -130,11 +132,11 @@
             ></div>
             <select
               name="chart__data-period"
-              class="chart__data-period justify-right"
+              class="widget__select chart__data-period justify-right"
             >
-              <option class="data-period__item" selected>This year</option>
-              <option class="data-period__item">Previous year</option>
-              <option class="data-period__item">All time</option>
+              <option class="widget__select-item" selected>This year</option>
+              <option class="widget__select-item">Previous year</option>
+              <option class="widget__select-item">All time</option>
             </select>
           </div>
           <canvas class="chart bar-chart" id="bar-chart"></canvas>
@@ -199,18 +201,18 @@
         <article class="widget widget-large tickets">
           <h3 class="widget__title">Tickets</h3>
           <select
-            name="chart__data-period"
-            class="chart__data-period justify-right"
+            name="tickets__data-period"
+            class="widget__select justify-right"
           >
-            <option class="data-period__item" selected>This year</option>
-            <option class="data-period__item">Previous year</option>
-            <option class="data-period__item">All time</option>
+            <option class="widget__select-item" selected>This year</option>
+            <option class="widget__select-item">Previous year</option>
+            <option class="widget__select-item">All time</option>
           </select>
           <ul class="tabs">
-            <button class="tab__button tab__button-active">All</button>
-            <button class="tab__button">Open</button>
-            <button class="tab__button">Pending</button>
-            <button class="tab__button">Closed</button>
+            <button class="tab__button tab__button-active tab_all">All</button>
+            <button class="tab__button tab_open">Open</button>
+            <button class="tab__button tab_pending">Pending</button>
+            <button class="tab__button tab_closed">Closed</button>
           </ul>
           <ul class="tickets__list">
             <li class="ticket">

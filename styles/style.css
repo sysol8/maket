@@ -1,6 +1,7 @@
 .sidebar {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   padding: 0 20px 20px;
   color: #fff;
@@ -8,21 +9,32 @@
   background-color: var(--background);
 }
 
+.sidebar nav {
+  flex-grow: 1;
+}
+
 .logo {
   width: 12rem;
 }
 
 .title {
-  margin: -10px 0 1rem;
+  margin: -10px 0 0;
   font-weight: 700;
   font-size: 2rem;
   text-align: center;
   text-transform: uppercase;
 }
 
+.divider {
+  border-top: 1px solid white;
+  margin: 1rem 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
 .navigation__list {
   display: flex;
   flex-direction: column;
+  height: 100%;
   flex-grow: 1;
   gap: 0.4rem;
 }
@@ -66,7 +78,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px 30px;
+  padding: 1rem 2rem;
   color: var(--text);
   background-color: white;
 }
@@ -211,9 +223,6 @@
   gap: 0.8rem;
 }
 
-.chart {
-}
-
 .legend__list-item {
   display: flex;
   align-items: center;
@@ -230,7 +239,7 @@
   color: var(--text-dark);
 }
 
-.chart__data-period {
+.widget__select {
   border: 1px solid var(--text);
   border-radius: 6px;
   padding: 2px 10px;
@@ -239,13 +248,22 @@
   background-color: var(--background-light-grey);
 }
 
+/* .chart__data-period {
+  border: 1px solid var(--text);
+  border-radius: 6px;
+  padding: 2px 10px;
+  outline: none;
+  font-family: inherit;
+  background-color: var(--background-light-grey);
+} */
+
 .chart__data-period:focus {
   outline: transparent;
 }
 
 .chart__data-period:focus-visible {
   outline: 1px solid var(--text);
-  outline-offset: 1px;
+  /* outline-offset: 1px; */
 }
 
 .transactions {
@@ -280,22 +298,53 @@
   margin-right: 0.4rem;
   border-radius: 4px;
   padding: 0.1rem 0.3rem;
+  border-width: 2px;
+  border-style: solid;
 }
 
 .subscription-plan_base {
-  border: 2px solid var(--background);
+  border-color: var(--background);
 }
 
 .subscription-plan_advanced {
-  border: 2px solid var(--background-accent-pink);
+  border-color: var(--background-accent-pink);
 }
 
 .subscription-plan_pro {
-  border: 2px solid var(--background-accent-blue_3);
+  border-color: var(--background-accent-blue_3);
 }
 
 .subscription-plan_enterprise {
-  border: 2px solid var(--background-accent-yellow)
+  border-color: var(--background-accent-yellow)
+}
+
+.tabs {
+  display: flex;
+  gap: 0.2rem;
+  width: 100%;
+}
+
+.tab__button {
+  padding: 0.1rem 0.6rem;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.tab_open {
+  border-color: var(--background-accent-blue_1);
+}
+
+.tab_open:hover {
+  background-color: color(from var(--background-accent-blue_1) srgb r g b / 0.8);
+}
+
+.tab_pending {
+  border-color: var(--background-accent-yellow);
+}
+
+.tab_closed {
+  border-color: var(--background-accent-red);
 }
 
 .tickets__list {
@@ -303,6 +352,14 @@
   flex-direction: column;
 }
 
+.tickets__list::marker {
+  background-color: var(--text);
+  width: 1rem;
+  height: 1rem;
+}
+
 .ticket {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
