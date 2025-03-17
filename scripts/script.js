@@ -13,3 +13,4 @@ tabButtons.forEach(tabButton => {
         tabButton.style.backgroundColor = borderColor;
     });
 });
+

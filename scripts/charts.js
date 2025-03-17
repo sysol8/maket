@@ -158,3 +158,4 @@ new Chart(doughnutChart, {
   },
   plugins: [htmlLegendPlugin]
 });
+
