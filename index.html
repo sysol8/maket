@@ -69,7 +69,7 @@
               <svg class="bi" width="16" height="16" fill="currentColor">
                 <use href="./assets/icons/bootstrap-icons.svg#plugin"></use>
               </svg>
-              <span>Developer</span>
+              <span class="navigation-link__text">Developer</span>
             </a>
           </li>
         </ul>
@@ -85,35 +85,36 @@
     <div class="column">
       <header class="appbar">
         <h2 class="page__title">Dashboard</h2>
-        <div class="appbar__content-container">
-          <form class="search-form">
-            <label class="search-bar__label">
-              <input
-                class="search-bar"
-                placeholder="Type something"
-                type="search"
-              />
-              <button class="search-button" type="submit">
-                <svg
-                  class="bi search-icon"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                >
-                  <use href="./assets/icons/bootstrap-icons.svg#search"></use>
-                </svg>
-              </button>
-            </label>
-          </form>
-          <div class="appbar__settings">
-            <a class="profile__link">
-              <svg class="bi profile-icon" width="16" height="16" fill="currentColor">
-                <use href="./assets/icons/bootstrap-icons.svg#person-circle"></use>
+        <form class="search-form">
+          <label class="search-bar__label">
+            <input
+              class="search-bar"
+              placeholder="Type something"
+              type="search"
+            />
+            <button class="search-button" type="submit">
+              <svg
+                class="bi search-icon"
+                width="16"
+                height="16"
+                fill="currentColor"
+              >
+                <use href="./assets/icons/bootstrap-icons.svg#search"></use>
               </svg>
-            </a>
-            <button class="appbar__dropdown-button">&lt;</button>
-          </div>
-        </div>
+            </button>
+          </label>
+        </form>
+        <a class="profile__link">
+          <svg
+            class="bi profile-icon"
+            width="16"
+            height="16"
+            fill="currentColor"
+          >
+            <use href="./assets/icons/bootstrap-icons.svg#person-circle"></use>
+          </svg>
+        </a>
+        <button class="appbar__dropdown-button">&lt;</button>
       </header>
       <main class="widgets">
         <article class="widget widget-small">
@@ -163,7 +164,10 @@
             </select>
           </div>
           <canvas class="chart doughnut-chart" id="doughnut-chart"></canvas>
-          <div class="chart__legend justify-center" id="doughnut-chart__legend"></div>
+          <div
+            class="chart__legend justify-center"
+            id="doughnut-chart__legend"
+          ></div>
         </article>
         <article class="widget widget-medium transactions">
           <h3 class="widget__title transactions__title">Transactions</h3>
