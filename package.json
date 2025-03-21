@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "bootstrap-icons": "^1.11.3",
-    "chart.js": "^4.4.8",
-    "chartjs-chart-geo": "^4.3.4"
+    "chart.js": "^4.4.8"
   }
 }
