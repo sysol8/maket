@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   height: 100%;
   padding: 0 20px 20px;
   color: #fff;
@@ -11,6 +12,11 @@
 
 .sidebar__navigation {
   flex-grow: 1;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  border: 1px solid white;
+  border-color: white transparent;
 }
 
 .logo {
@@ -23,12 +29,6 @@
   font-size: 2rem;
   text-align: center;
   text-transform: uppercase;
-}
-
-.divider {
-  margin: 1rem 0;
-  border-top: 1px solid white;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
 .navigation__list {
@@ -46,24 +46,18 @@
   padding: 0.4rem 0.8rem;
 }
 
-.navigation-link:hover,
-.login-logout__button:hover {
+.navigation-link:hover {
   background-color: var(--background-accent-blue_1);
 }
 
-.navigation-link:active,
-.login-logout__button:active {
+.navigation-link:active {
   background-color: var(--background-accent-blue_2);
 }
 
 .login-logout__button {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
   border-color: transparent;
-  border-radius: 6px;
-  padding: 0.4rem 0.8rem;
   background-color: transparent;
+  width: 100%;
 }
 
 .appbar {
@@ -96,6 +90,8 @@
   border-radius: 1.2rem;
   padding: 0.6rem 1rem;
   background-color: var(--background-grey);
+  outline: 0px solid transparent;
+  transition: outline 1s ease;
 }
 
 .search-bar__label:has(:focus-visible):not(:has(.search-button:focus-visible)) {
@@ -129,7 +125,7 @@
   height: 20px;
   border: 1px solid transparent;
   background-color: transparent;
-  background-image: url('../assets/icons/search.svg');
+  background-image: url("../assets/icons/search.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -140,7 +136,8 @@
 }
 
 .profile__link {
-  block-size: 100%;
+  min-width: min(32px, 40px);
+  height: 100%;
 }
 
 .profile-icon {
@@ -151,10 +148,13 @@
 .appbar__dropdown-button {
   display: flex;
   align-items: center;
-  height: 100%;
-  border-color: transparent;
+  min-width: min(12px, 16px);
   font-weight: 700;
-  background-color: transparent;
+}
+
+.appbar__dropdown-button:focus-visible {
+  outline: 1px solid var(--text);
+  outline-offset: 1px;
 }
 
 .dropdown-button__icon {
@@ -169,27 +169,13 @@
 
 .widgets {
   display: grid;
-  grid-template-columns: repeat(4, minmax(334px, 1fr)); /* виджеты не должны сужаться, они должны переноситься */
-  grid-template-rows: repeat(7, 1fr);
-  grid-auto-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: row dense;
   gap: 1.4rem;
-  height: 100%;
-  padding: 1rem;
+  padding: 1rem 1.4rem 1rem 1rem;
   overflow-y: auto;
   background-color: var(--background-grey);
-  grid-auto-flow: row dense;
-}
-
-@media (max-width: 1280px) {
-  .widgets {
-    grid-template-columns: repeat(3, 1fr); /* 2 колонки для экранов меньше 1280px */
-  }
-}
-
-@media (max-width: 768px) {
-  .widgets {
-    grid-template-columns: 1fr; /* 1 колонка для экранов меньше 768px */
-  }
+  height: 100%;
 }
 
 .widget {
@@ -204,9 +190,7 @@
   background-color: white;
 }
 
-.widget:not(.widget_small)
-
-.accent-blue_1 {
+.widget:not(.widget_small) .accent-blue_1 {
   background-color: var(--background-accent-blue_1);
 }
 
@@ -225,7 +209,8 @@
 }
 
 .widget_small {
-
+  grid-row: span 1;
+  grid-column: span 1;
 }
 
 .widget_small .widget__title {
@@ -239,17 +224,20 @@
 
 .widget-medium {
   grid-column: span 1;
-  grid-row: span 3;
+  padding: 1rem 1.2rem;
 }
 
 .widget_large {
   grid-column: span 2;
-  grid-row: span 3;
+  padding: 1rem 1.2rem;
 }
 
 .widget__info-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
 .widget__select {
@@ -267,6 +255,42 @@
 
 .widget__select:focus-visible {
   outline: 1px solid var(--text);
+}
+
+.chart__container {
+}
+
+.bar-chart {
+}
+
+.doughnut-chart {
+}
+
+.chart__data-total {
+  position: absolute;
+  z-index: 2;
+  color: black;
+  inset: 0;
+}
+
+.legend__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.legend__list-item {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.legend__marker {
+  border-radius: 50%;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
 }
 
 .transactions {
@@ -324,10 +348,11 @@
   border-color: var(--background-accent-yellow);
 }
 
-.transactions__button-view-all {
+.transactions__button_view-all {
   border: 1px solid transparent;
   border-radius: 6px;
   padding: 0.8rem;
+  background-color: var(--background-grey);
 }
 
 .tickets {
@@ -338,7 +363,6 @@
 
 .tickets__select {
   justify-self: end;
-  width: min-content;
 }
 
 .tabs {
@@ -368,6 +392,7 @@
 .tab_open {
   border-color: var(--background-accent-blue_1);
 }
+
 .tab_open:hover {
   background-color: color-mix(
     in srgb,
@@ -379,6 +404,7 @@
 .tab_pending {
   border-color: var(--background-accent-yellow);
 }
+
 .tab_pending:hover {
   background-color: color-mix(
     in srgb,
