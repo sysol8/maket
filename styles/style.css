@@ -20,13 +20,13 @@
 }
 
 .logo {
-  width: 12rem;
+  width: 12em;
 }
 
 .title {
   margin: -10px 0 0;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -34,16 +34,15 @@
 .navigation__list {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  gap: 0.4rem;
+  gap: 0.4em;
 }
 
 .navigation-link {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.8em;
   border-radius: 6px;
-  padding: 0.4rem 0.8rem;
+  padding: 0.4em 0.8em;
 }
 
 .navigation-link:hover {
@@ -135,6 +134,8 @@
   outline-offset: 2px;
 }
 
+/* вот тут всякие кнопки иконки надо поправить, сдеално через костыли */
+
 .profile__link {
   min-width: min(32px, 40px);
   height: 100%;
@@ -160,6 +161,7 @@
 .dropdown-button__icon {
   width: 100%;
 }
+/* конец секции с костылями */
 
 .column {
   display: flex;
@@ -169,13 +171,13 @@
 
 .widgets {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  grid-template-rows: 1fr 3fr 3fr;
   grid-auto-flow: row dense;
   gap: 1.4rem;
-  padding: 1rem 1.4rem 1rem 1rem;
+  padding: 1rem;
   overflow-y: auto;
   background-color: var(--background-grey);
-  height: 100%;
 }
 
 .widget {
@@ -478,4 +480,15 @@
 
 .status_closed {
   background-color: var(--background-accent-red);
+}
+
+@media (width <= 425px) {
+  .sidebar {
+    display: none;
+  }
+
+  .widgets {
+    display: flex;
+    flex-direction: column;
+  }
 }
