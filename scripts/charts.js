@@ -43,6 +43,8 @@ const htmlLegendPlugin = {
       const boxSpan = document.createElement("span");
       boxSpan.classList.add('legend__marker');
       boxSpan.style.background = item.fillStyle;
+      boxSpan.style.inlineSize = "16px";
+      boxSpan.style.blockSize = "16px";
 
       const textContainer = document.createElement("p");
       textContainer.classList.add('list-item__text')
@@ -78,7 +80,7 @@ const barChart = document.getElementById("bar-chart");
 new Chart(barChart, {
   type: "bar",
   data: {
-    labels: months,
+    /* labels: months, */
     datasets: [
       {
         label: "New",
