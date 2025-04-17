@@ -81,11 +81,11 @@
         <span>Log Out</span>
       </button>
     </aside>
-    <div class="column">
+    <div class="wrapper">
       <header class="appbar">
         <h2 class="page__title">Dashboard</h2>
         <form class="search-form">
-          <label class="search-bar__label">
+          <label class="search-form__label">
             <input
               class="search-bar"
               placeholder="Type something"
@@ -94,7 +94,7 @@
             <button class="search-button" type="submit"></button>
           </label>
         </form>
-        <a class="profile__link">
+        <a class="profile__link" href="#0">
           <svg
             class="bi profile-icon"
             width="16"
@@ -156,12 +156,12 @@
               <option class="widget__select-item">All time</option>
             </select>
           </div>
-          <div class="chart__container doughnut-chart">
+          <!-- <div class="chart__container doughnut-chart">
             <canvas class="chart" id="doughnut-chart"></canvas>
-          </div>
+          </div> -->
           <div class="chart__legend" id="chart__legend-doughnut"></div>
         </article>
-        <article class="widget widget-medium transactions">
+        <!-- <article class="widget widget-medium transactions">
           <h3 class="widget__title transactions__title">Transactions</h3>
           <ul class="transactions__list">
             <li class="transactions__list-item">
@@ -207,7 +207,7 @@
           <button class="transactions__button_view-all">
             View All Transactions
           </button>
-        </article>
+        </article> -->
         <article class="widget widget_large tickets">
           <h3 class="widget__title tickets__title">Tickets</h3>
           <select
@@ -228,22 +228,22 @@
             <li class="ticket">
               <p class="customer-email">pipka.popka@sex.ru</p>
               <p class="ticket__subject">Trouble with Mr. Benis</p>
-              <span class="ticket__status status_open">Open</span>
+              <span class="ticket__status ticket__status_open">Open</span>
             </li>
             <li class="ticket">
               <p class="customer-email">abrosilya@swag.ru</p>
               <p class="ticket__subject">Cannot see a shit</p>
-              <span class="ticket__status status_pending">Pending</span>
+              <span class="ticket__status ticket__status_pending">Pending</span>
             </li>
             <li class="ticket">
               <p class="customer-email">varilya@kaif.com</p>
               <p class="ticket__subject">I've lost all of my Chevapchichi</p>
-              <span class="ticket__status status_pending">Pending</span>
+              <span class="ticket__status ticket__status_pending">Pending</span>
             </li>
             <li class="ticket">
               <p class="customer-email">crinemihailov@gnom.eu</p>
               <p class="ticket__subject">Bye Bye</p>
-              <span class="ticket__status status_closed">Closed</span>
+              <span class="ticket__status ticket__status_closed">Closed</span>
             </li>
           </ul>
         </article>

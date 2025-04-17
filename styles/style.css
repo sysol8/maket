@@ -3,46 +3,54 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-  padding: 0 20px 20px;
+  max-block-size: 100vh;
+  padding: 0 2rem 1rem;
   color: #fff;
-  font-size: 1rem;
+  font-size: 2rem;
   background-color: var(--background);
 }
 
 .sidebar__navigation {
   flex-grow: 1;
-  width: 100%;
-  padding: 1rem 0;
+  inline-size: 100%;
+  padding: 1.2rem 0 1rem;
   margin: 1rem 0;
-  border: 1px solid white;
-  border-color: white transparent;
+  border: 1px solid;
+  border-color: #fff transparent;
 }
 
 .logo {
-  width: 12em;
+  inline-size: 19.2rem;
 }
 
 .title {
-  margin: -10px 0 0;
+  margin-block-start: -1rem;
   font-weight: 700;
   font-size: 2em;
-  text-align: center;
   text-transform: uppercase;
 }
 
 .navigation__list {
   display: flex;
   flex-direction: column;
-  gap: 0.4em;
+  gap: 0.8rem;
 }
 
 .navigation-link {
+  font-size: 0.8em;
   display: flex;
   align-items: center;
   gap: 0.8em;
   border-radius: 6px;
   padding: 0.4em 0.8em;
+}
+
+.navigation-link:focus {
+  outline-color: transparent;
+}
+
+.navigation-link:focus-visible {
+  outline: 1px solid #fff;
 }
 
 .navigation-link:hover {
@@ -53,62 +61,58 @@
   background-color: var(--background-accent-blue_2);
 }
 
+.bi {
+  min-inline-size: 1.6rem;
+  min-block-size: 1.6rem;
+}
+
 .login-logout__button {
-  border-color: transparent;
-  background-color: transparent;
-  width: 100%;
+  inline-size: 100%;
 }
 
 .appbar {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  width: 100%;
-  padding: 1rem 2rem;
-  color: var(--text);
+  padding-block: 1.6rem;
+  padding-inline: 2rem 2.2rem;
+  font-size: 1.6rem;
 }
 
 .page__title {
   flex-grow: 1;
-  font-size: 1.6rem;
+  font-size: 1.6em;
 }
 
 .search-form {
-  width: 300px;
-  margin: 0 1rem 0 1rem;
-  transition: width 1s cubic-bezier(0.33, 1, 0.68, 1) 0s;
+  padding-inline: 1.6rem;
+  block-size: 100%;
+  position: relative;
+  inline-size: 32rem;
 }
 
-.search-form:focus-within {
-  width: 50%;
-}
-
-.search-bar__label {
+.search-form__label {
   display: flex;
-  border-color: transparent;
-  border-radius: 1.2rem;
-  padding: 0.6rem 1rem;
+  border-radius: 2cap;
+  block-size: 100%;
+  padding-inline-end: 1.2rem;
   background-color: var(--background-grey);
-  outline: 0px solid transparent;
-  transition: outline 1s ease;
+  align-items: center;
 }
 
-.search-bar__label:has(:focus-visible):not(:has(.search-button:focus-visible)) {
+.search-form__label:has(:focus-visible):not(:has(.search-button:focus-visible)) {
   outline: 1px solid var(--text);
 }
 
 .search-bar {
+  block-size: 100%;
+  flex-grow: 1;
   border: none;
-  border-radius: 1.2rem;
-  padding: 0 1.6rem 0 0.2rem;
-  font-size: 1.1rem;
+  padding-inline: 1.2rem;
   background-color: transparent;
-  inline-size: 100%;
 }
 
 .search-bar::placeholder {
   font-family: "Poppins";
-  font-size: 1rem;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -122,7 +126,6 @@
 .search-button {
   width: 20px;
   height: 20px;
-  border: 1px solid transparent;
   background-color: transparent;
   background-image: url("../assets/icons/search.svg");
   background-repeat: no-repeat;
@@ -131,26 +134,31 @@
 
 .search-button:focus-visible {
   outline: 1px solid var(--text);
-  outline-offset: 2px;
 }
 
 /* вот тут всякие кнопки иконки надо поправить, сдеално через костыли */
 
 .profile__link {
-  min-width: min(32px, 40px);
-  height: 100%;
+  block-size: 3.8rem;
+  inline-size: 3.8rem;
+  display: flex;
+}
+
+.profile__link:focus-visible {
+  outline: 1px solid #000;
 }
 
 .profile-icon {
-  width: 100%;
-  height: 100%;
+  inline-size: 3.6rem;
+  block-size: 3.6rem;
+  margin: auto;
 }
 
 .appbar__dropdown-button {
   display: flex;
   align-items: center;
-  min-width: min(12px, 16px);
   font-weight: 700;
+  margin-inline: 0.6rem 1rem;
 }
 
 .appbar__dropdown-button:focus-visible {
@@ -159,23 +167,25 @@
 }
 
 .dropdown-button__icon {
-  width: 100%;
+  inline-size: 100%;
+  block-size: 100%;
 }
-/* конец секции с костылями */
 
-.column {
+.wrapper {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  inline-size: 100%;
 }
 
 .widgets {
+  flex-grow: 1;
   display: grid;
-  grid-template-columns: repeat(4, minmax(150px, 1fr));
-  grid-template-rows: 1fr 3fr 3fr;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 4fr 3fr;
   grid-auto-flow: row dense;
-  gap: 1.4rem;
-  padding: 1rem;
+  gap: 1.2rem;
+  padding-block: 1.2rem;
+  padding-inline: 1.2rem 1.6rem;
   overflow-y: auto;
   background-color: var(--background-grey);
 }
@@ -183,9 +193,8 @@
 .widget {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   border-radius: 12px;
-  padding: 0.4rem 1rem;
+  padding: 0.8rem 1.4rem 0.6rem;
   color: var(--text);
   font-weight: normal;
   font-size: 1rem;
@@ -211,27 +220,28 @@
 }
 
 .widget_small {
-  grid-row: span 1;
-  grid-column: span 1;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  grid-column: span 3;
 }
 
 .widget_small .widget__title {
-  font-weight: normal;
+  font-weight: 400;
+  font-size: 1.4em;
 }
 
 .widget_small .widget__text {
-  font-weight: 400;
-  font-size: 2em;
+  font-weight: 500;
+  font-size: 2.4em;
 }
 
 .widget-medium {
-  grid-column: span 1;
-  padding: 1rem 1.2rem;
+  grid-column: span 3;
+  font-size: 2rem;
 }
 
 .widget_large {
-  grid-column: span 2;
-  padding: 1rem 1.2rem;
+  grid-column: span 6;
 }
 
 .widget__info-container {
@@ -260,6 +270,9 @@
 }
 
 .chart__container {
+}
+
+.chart {
 }
 
 .bar-chart {
@@ -469,17 +482,32 @@
   text-transform: uppercase;
 }
 
-.status_open {
+.ticket__status_open {
   background-color: var(--background);
 }
 
-.status_pending {
+.ticket__status_pending {
   color: var(--text);
   background-color: var(--background-accent-yellow);
 }
 
-.status_closed {
+.ticket__status_closed {
   background-color: var(--background-accent-red);
+}
+
+/* @media (width <= 1280px) {
+  .widgets {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
+  }
+}
+
+@media (width <= 1024px) {
+
+}
+
+@media (width <= 768px) {
+
 }
 
 @media (width <= 425px) {
@@ -491,4 +519,4 @@
     display: flex;
     flex-direction: column;
   }
-}
+} */
