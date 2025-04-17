@@ -130,7 +130,7 @@
         <article class="widget widget_large">
           <div class="widget__info-container">
             <h3 class="widget__title">Bebra</h3>
-            <div class="chart__legend" id="chart__legend-bar"></div>
+            <!-- <div class="chart__legend" id="chart__legend-bar"></div> -->
             <select
               name="chart__data-period"
               class="widget__select chart__data-period justify-right"
@@ -140,9 +140,9 @@
               <option class="widget__select-item">All time</option>
             </select>
             </div>
-            <div class="chart__container">
+            <!-- <div class="chart__container">
               <canvas class="chart bar-chart" id="bar-chart"></canvas>
-            </div>
+            </div> -->
         </article>
         <article class="widget widget_medium">
           <div class="widget__info-container">
@@ -156,10 +156,10 @@
               <option class="widget__select-item">All time</option>
             </select>
           </div>
-          <div class="chart__container doughnut-chart">
+          <!-- <div class="chart__container doughnut-chart">
             <canvas class="chart" id="doughnut-chart"></canvas>
           </div>
-          <div class="chart__legend" id="chart__legend-doughnut"></div>
+          <div class="chart__legend" id="chart__legend-doughnut"></div> -->
         </article>
         <article class="widget widget_medium transactions">
           <h3 class="widget__title transactions__title">Transactions</h3>
@@ -214,9 +214,10 @@
             name="tickets__data-period"
             class="widget__select tickets__select justify-right"
           >
-            <option class="widget__select-item" selected>This year</option>
-            <option class="widget__select-item">Previous year</option>
-            <option class="widget__select-item">All time</option>
+            <option class="widget__select-item" selected>This day</option>
+            <option class="widget__select-item">Previous day</option>
+            <option class="widget__select-item">This week</option>
+            <option class="widget__select-item">Previous week</option>
           </select>
           <ul class="tabs">
             <button class="tab__button tab_all">All</button>

@@ -53,7 +53,8 @@ a {
 
 input,
 button,
-a {
+a,
+select {
   border-color: transparent;
   background-color: transparent;
   outline-color: transparent;
