@@ -1,0 +1,16 @@
+:root {
+    --background: #4186d3;
+    --background-accent-blue_1: #0d56a6;
+    --background-accent-blue_2: #274f7d;
+    --background-accent-blue_3: #04356c;
+    --background-accent-blue_4: #689ad3;
+    --background-grey: #dfdfdf;
+    --background-accent-red: #d22828;
+    --background-accent-yellow: #fa0;
+    --background-accent-peach: #ff7373;
+
+    --text-color: #0f0f0f;
+    --text-light-color: #f0f0f0; 
+
+    --focus-outline: 1px solid var(--text-color);
+  }

@@ -79,28 +79,29 @@
 }
 
 .page__title {
-  flex-grow: 1;
   font-size: 1.6em;
+  flex-grow: 1;
 }
 
 .search-form {
   padding-inline: 1.6rem;
   block-size: 100%;
   position: relative;
-  inline-size: 32rem;
+  inline-size: 32rem; /* clamp(3.9rem, -1.7200rem + 17.5625vw, 32rem) */
 }
 
 .search-form__label {
   display: flex;
   border-radius: 2cap;
   block-size: 100%;
+  /* inline-size: clamp(3.9rem, -1.7200rem + 17.5625vw, 32rem); */
   padding-inline-end: 1.2rem;
   background-color: var(--background-grey);
   align-items: center;
 }
 
 .search-form__label:has(:focus-visible):not(:has(.search-button:focus-visible)) {
-  outline: 1px solid var(--text);
+  outline: var(--focus-outline);
 }
 
 .search-bar {
@@ -133,10 +134,8 @@
 }
 
 .search-button:focus-visible {
-  outline: 1px solid var(--text);
+  outline: var(--focus-outline);
 }
-
-/* вот тут всякие кнопки иконки надо поправить, сдеално через костыли */
 
 .profile__link {
   block-size: 3.8rem;
@@ -162,7 +161,7 @@
 }
 
 .appbar__dropdown-button:focus-visible {
-  outline: 1px solid var(--text);
+  outline: var(--focus-outline);
   outline-offset: 1px;
 }
 
@@ -196,7 +195,7 @@
   flex-direction: column;
   border-radius: 12px;
   padding: 0.8rem 1.4rem 0.6rem;
-  color: var(--text);
+  color: var(--text-color);
   font-weight: 400;
   font-size: 1rem;
   background-color: white;
@@ -230,7 +229,7 @@
 
 .widget_small .widget__text {
   font-weight: 500;
-  font-size: 2.8em;
+  font-size: 3em;
 }
 
 .widget__title {
@@ -244,6 +243,7 @@
 .widget_large {
   grid-column: span 2;
   padding: 1.2rem 2rem;
+  min-block-size: 320px; /* Костыль, потом поправить гридами */
 }
 
 .widget__info-container {
@@ -254,31 +254,26 @@
   gap: 0.6rem;
 }
 
-.chart__legend {
-  font-size: 1.6em;
-  justify-self: center;
-}
-
 .widget__select {
   justify-self: end;
   background-color: var(--background-grey);
   min-inline-size: 12rem;
   border-radius: 6px;
   padding: 2px 10px;
-  outline: none;
   font-family: inherit;
 }
 
-/* .widget__select:focus {
+.widget__select:focus {
   outline: transparent;
 }
 
 .widget__select:focus-visible {
-  outline: 1px solid var(--text);
-} */
+  outline: var(--focus-outline);
+}
 
 .chart__container {
-  padding-block: 2rem;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .legend__list {
@@ -356,11 +351,15 @@
   border-color: var(--background-accent-yellow);
 }
 
-.transactions__button_view-all {
+.transactions__button-view-all {
   border: 1px solid transparent;
   border-radius: 6px;
   padding: 0.8rem;
   background-color: var(--background-grey);
+}
+
+.transactions__button-view-all:focus-visible {
+  outline: 
 }
 
 .tickets {
@@ -387,11 +386,11 @@
 }
 
 .tab_all {
-  border-color: var(--text);
+  border-color: var(--text-color);
 }
 
 .tab_all:hover {
-  background-color: color-mix(in srgb, var(--text) 30%, transparent);
+  background-color: color-mix(in srgb, var(--text-color) 30%, transparent);
 }
 
 .tab_open {
@@ -477,7 +476,7 @@
 }
 
 .ticket__status_pending {
-  color: var(--text);
+  color: var(--text-color);
   background-color: var(--background-accent-yellow);
 }
 
@@ -555,5 +554,16 @@
   .widgets {
     display: flex;
     flex-direction: column;
+    inline-size: 100%;
+  }
+
+  .search-bar {
+    display: none;
+  }
+
+  .search-form__label {
+    padding: 0;
+    aspect-ratio: 1/1;
+    place-content: center;
   }
 }
