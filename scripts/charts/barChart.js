@@ -13,6 +13,12 @@ option = {
     yAxis: {
         type: 'value'
     },
+    grid: {
+        left: '7.5%',
+        bottom: '10%',
+        top: '15%',
+        right: '5%'
+    },
     series: [
         {
             name: 'New',

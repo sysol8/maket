@@ -185,7 +185,6 @@
   gap: 1.2rem;
   padding-block: 1.2rem;
   padding-inline: 1.2rem 1.6rem;
-  font-size: 1.2rem;
   overflow-y: auto;
   background-color: var(--background-grey);
 }
@@ -197,7 +196,7 @@
   padding: 0.8rem 1.4rem 0.6rem;
   color: var(--text-color);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.4rem;
   background-color: white;
 }
 
@@ -229,11 +228,11 @@
 
 .widget_small .widget__text {
   font-weight: 500;
-  font-size: 3em;
+  font-size: 2.2em;
 }
 
 .widget__title {
-  font-size: 1.8em;
+  font-size: 1.4em;
 }
 
 .widget_medium {
@@ -312,7 +311,8 @@
 }
 
 .transactions__list-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 3fr min-content 7rem;
   align-items: center;
   border-bottom: 1px solid rgba(113, 127, 154, 0.5);
   padding-bottom: 0.4rem;
@@ -323,8 +323,8 @@
 }
 
 .customer-name {
-  flex-grow: 1;
   text-wrap: nowrap;
+  flex-grow: 1;
 }
 
 .subscription-plan {
@@ -351,15 +351,20 @@
   border-color: var(--background-accent-yellow);
 }
 
+.transaction-income {
+  justify-self: end;
+}
+
 .transactions__button-view-all {
-  border: 1px solid transparent;
-  border-radius: 6px;
-  padding: 0.8rem;
   background-color: var(--background-grey);
+  border-radius: 6px;
+  padding-block: 1rem;
+  border: 1px solid transparent;
+  overflow: hidden;
 }
 
 .transactions__button-view-all:focus-visible {
-  outline: 
+  outline: var(--focus-outline);
 }
 
 .tickets {
@@ -565,5 +570,7 @@
     padding: 0;
     aspect-ratio: 1/1;
     place-content: center;
+    max-block-size: 39px;
+    justify-self: end;
   }
 }
