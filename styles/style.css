@@ -374,20 +374,21 @@
 }
 
 .tabs {
-  font-size: 1.4em;
+  line-height: 1;
+  font-size: 1.2em;
   display: flex;
   flex-wrap: wrap;
   grid-column: span 2;
-  gap: 0.4rem;
+  gap: 0.6rem;
   padding: 0.8rem 0;
 }
 
 .tab__button {
   border-width: 2px;
   border-style: solid;
-  border-radius: 1rem;
-  padding: 0.1rem 0.8rem;
-  transition: background-color 0.3s ease;
+  border-radius: 1em;
+  padding: 0.4rem 0.8rem;
+  transition: background-color 0.3s;
 }
 
 .tab_all {
@@ -425,6 +426,7 @@
 .tab_closed {
   border-color: var(--background-accent-red);
 }
+
 .tab_closed:hover {
   background-color: color-mix(
     in srgb,
@@ -441,21 +443,31 @@
   display: flex;
   flex-direction: column;
   grid-column: span 2;
-  justify-content: space-evenly;
-  height: 100%;
+  gap: 1em;
 }
 
 .ticket {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: min-content 2fr 2fr 1fr;
   justify-content: space-between;
   border-bottom: 1px solid rgba(113, 127, 154, 0.5);
   padding: 0.4rem 0;
 }
 
+.ticket::before {
+  content: '';
+  background-color: #000;
+  border-radius: 50%;
+  inline-size: 1.6rem;
+  aspect-ratio: 1/1;
+  align-self: center;
+  margin-inline-end: 0.6em;
+}
+
 .customer-email {
   font-weight: 300;
   white-space: nowrap;
+  font-style: normal;
 }
 
 .ticket__subject {
@@ -467,12 +479,12 @@
 }
 
 .ticket__status {
+  line-height: 1;
   justify-self: end;
   border-radius: 6px;
-  padding: 0.2rem 0.4rem;
+  padding: 0.4rem 0.6rem;
   color: white;
-  font-weight: 500;
-  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
 }
 

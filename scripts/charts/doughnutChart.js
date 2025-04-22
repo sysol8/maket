@@ -1,6 +1,6 @@
 const doughnutChartContainer = document.getElementById('doughnut-chart');
 const doughnutChart = echarts.init(doughnutChartContainer, null, {
-    renderer: 'canvas'
+    renderer: 'svg'
 });
 
 let option;
