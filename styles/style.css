@@ -375,7 +375,7 @@
 
 .tabs {
   line-height: 1;
-  font-size: 1.2em;
+  font-size: 1em;
   display: flex;
   flex-wrap: wrap;
   grid-column: span 2;
@@ -524,10 +524,15 @@
 @media (width <= 1024px) {
   .widgets {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content min-content 32rem 40rem 32rem 32rem;
   }
 
   .widget_small {
     grid-column: auto;
+  }
+  
+  .widget_medium {
+    grid-row: span 1;
   }
 
   .widget_large {
@@ -584,5 +589,9 @@
     place-content: center;
     max-block-size: 39px;
     justify-self: end;
+  }
+
+  .widget.widget:not(.widget_small) {
+    min-block-size: 32rem;
   }
 }
